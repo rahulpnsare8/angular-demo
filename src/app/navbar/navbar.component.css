@@ -1,0 +1,34 @@
+.nav-bar {
+    width: 100%;
+    margin: 10px;
+}
+.menu{
+    margin-left: auto;
+    order: 2;
+}
+
+a:link{
+    padding: 10px;
+}
+
+a.active{
+    color: red;
+}
+
+
+.toolbar {
+    display: flex;
+    align-items: center;
+   
+    color: rgb(10, 9, 9);
+    font-weight: 600;
+  }
+
+.mat-icon {
+    transform: scale(2);
+    padding: 10px 15px 10px 10px;
+}
+
+.title{
+    font-size: x-large;
+}
