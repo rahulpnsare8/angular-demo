@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false
+  
 };
+export const empUrl = 'http://localhost:3004/employee/';
 
 /*
  * For easier debugging in development mode, you can import the following file

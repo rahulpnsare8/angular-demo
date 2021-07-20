@@ -1,0 +1,30 @@
+.right-align{
+    float: right;
+}
+
+.button{
+    width: 100px;
+    
+    color: white;
+    padding: 8px 10px;
+    margin: 6px 0px 0px 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button-success{
+   background-color: #93a0e7;
+}
+
+.button-danger{
+   background-color: #f35858;
+}
+
+.button-success:hover {
+  background-color: #566ce7;
+}
+  
+.button-danger:hover {
+  background-color: #f73333;
+}

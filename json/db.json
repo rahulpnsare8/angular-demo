@@ -1,0 +1,326 @@
+{
+  "employee": [
+    {
+      "firstName": "Naina",
+      "lastName": "Wadhwa",
+      "email": "naina@test.com",
+      "mobile": "9812091780",
+      "salary": "60000",
+      "id": 16
+    },
+    {
+      "firstName": "Ram",
+      "lastName": "Chandra",
+      "email": "ram.chandra@gmail.com",
+      "mobile": "9081786519",
+      "salary": "80000",
+      "id": 18
+    },
+    {
+      "firstName": "Abhimanyu",
+      "lastName": "prasad",
+      "email": "abhi.pra@test.com",
+      "mobile": "9081786510",
+      "salary": "90000",
+      "id": 19
+    },
+    {
+      "firstName": "ajay",
+      "lastName": "Singh",
+      "email": "ajay.singh@test.com",
+      "mobile": "9810876518",
+      "salary": "90000",
+      "id": 20
+    },
+    {
+      "firstName": "Milan",
+      "lastName": "Prasad",
+      "email": "milan.p@test.com",
+      "mobile": "9081289719",
+      "salary": "80000",
+      "id": 21
+    },
+    {
+      "firstName": "Rahul",
+      "lastName": "Pansare",
+      "email": "rahul.pansare@xyz.com",
+      "mobile": "9876543223",
+      "salary": "40000",
+      "id": 100
+    },
+    {
+      "firstName": "Mahesh",
+      "lastName": "Surve",
+      "email": "mahesh.surve@pqr.com",
+      "mobile": "7865342334",
+      "salary": "50000",
+      "id": 101
+    },
+    {
+      "firstName": "Suraj",
+      "lastName": "Kaudgave",
+      "email": "suraj.kaudgave@pqr.com",
+      "mobile": "8967542345",
+      "salary": "70000",
+      "id": 102
+    },
+    {
+      "firstName": "Sachin",
+      "lastName": "Tendulkar",
+      "email": "sachin.tendulkar@cvb.com",
+      "mobile": "7098675423",
+      "salary": "90000",
+      "id": 103
+    },
+    {
+      "firstName": "Rahul",
+      "lastName": "Dravid",
+      "email": "rahul.dravid@ert.com",
+      "mobile": "8098765432",
+      "salary": "34000",
+      "id": 104
+    },
+    {
+      "firstName": "Zaheer",
+      "lastName": "Khan",
+      "email": "zaheer.khan@pqr.com",
+      "mobile": "7869543223",
+      "salary": "45000",
+      "id": 105
+    },
+    {
+      "firstName": "Hardik",
+      "lastName": "Pandya",
+      "email": "hardik.pandya@qwe.com",
+      "mobile": "9756342354",
+      "salary": "78000",
+      "id": 106
+    },
+    {
+      "firstName": "Ishan",
+      "lastName": "Kishan",
+      "email": "ishan.kishan@mail.com",
+      "mobile": "6754235467",
+      "salary": "34090",
+      "id": 107
+    },
+    {
+      "firstName": "Shreyas",
+      "lastName": "Iyar",
+      "email": "Shreyash.Iyer",
+      "mobile": "6554325456",
+      "salary": "65000",
+      "id": 108
+    }
+  ],
+  "dashboard": [
+    {
+      "firstName": "Sri",
+      "lastName": "Shankara",
+      "email": "sri.shankar@test.com",
+      "mobile": "9898123401",
+      "salary": "90000",
+      "userId": 19
+    },
+    {
+      "firstName": "Arya",
+      "lastName": "sharma",
+      "email": "arya@gmail.com",
+      "mobile": "7861298769",
+      "salary": "80000",
+      "userId": 21
+    },
+    {
+      "firstName": "Shashank",
+      "lastName": "sharma",
+      "email": "shashank.sharma@gmail.com",
+      "mobile": "7861298769",
+      "salary": "1200000",
+      "userId": 21
+    },
+    {
+      "firstName": "Sopin",
+      "lastName": "sharma",
+      "email": "sopin.sharma@gmail.com",
+      "mobile": "7861298769",
+      "salary": "1500000",
+      "userId": 21
+    },
+    {
+      "firstName": "kabir",
+      "lastName": "kumar",
+      "email": "kabir@test.com",
+      "mobile": "9812098245",
+      "salary": "90800",
+      "userId": 23
+    },
+    {
+      "firstName": "kavi",
+      "lastName": "karan",
+      "email": "kavi@test.com",
+      "mobile": "8976124516",
+      "salary": "98120",
+      "userId": 24
+    },
+    {
+      "firstName": "Ajit",
+      "lastName": "Chandra",
+      "email": "chandra.ajit@test.com",
+      "mobile": "9570510842",
+      "salary": "80000",
+      "userId": 25
+    },
+    {
+      "firstName": "Raj",
+      "lastName": "Verma",
+      "email": "raj.verma@test.com",
+      "mobile": "9810987619",
+      "salary": "90000",
+      "userId": 26
+    },
+    {
+      "firstName": "Abhay",
+      "lastName": "kumar",
+      "email": "abhay@test.com",
+      "mobile": "8978109871",
+      "salary": "90000",
+      "userId": 27
+    },
+    {
+      "firstName": "Kiran",
+      "lastName": "Devi",
+      "email": "kiran@test.com",
+      "mobile": "9871098710",
+      "salary": "98100",
+      "userId": 28
+    },
+    {
+      "firstName": "kajal",
+      "lastName": "Kumari",
+      "email": "kajal.kumari@test.com",
+      "mobile": "9810981209",
+      "salary": "80000",
+      "userId": 29
+    },
+    {
+      "firstName": "Achal",
+      "lastName": "Nath",
+      "email": "achal.nath@test.com",
+      "mobile": "9087189761",
+      "salary": "60000",
+      "userId": 30
+    }
+  ],
+  "synechron": [
+    {
+      "name": "Akshay",
+      "city": "Patna",
+      "state": "Bihar",
+      "background verification": "done",
+      "designation": "Sr. Associate",
+      "technology": "Angular/React",
+      "salary": "80000",
+      "userId": 1
+    },
+    {
+      "name": "Abhishek",
+      "city": "Gaya",
+      "state": "Bihar",
+      "background verification": "done",
+      "designation": "Associate",
+      "technology": "Microsoft",
+      "salary": "60000",
+      "userId": 1
+    },
+    {
+      "name": "Akshay",
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "background verification": "done",
+      "designation": "Sr. Associate",
+      "technology": "Microsoft",
+      "salary": "80000",
+      "userId": 1
+    },
+    {
+      "name": "Nisha",
+      "city": "Patna",
+      "state": "Bihar",
+      "background verification": "pending",
+      "designation": "Associate",
+      "technology": "Full Stack",
+      "salary": "60000",
+      "userId": 1
+    },
+    {
+      "name": "Aman",
+      "city": "Patna",
+      "state": "Bihar",
+      "background verification": "pending",
+      "designation": "Associate",
+      "technology": "Full Stack",
+      "salary": "60000",
+      "userId": 1
+    },
+    {
+      "name": "Kiran",
+      "city": "Patna",
+      "state": "Bihar",
+      "background verification": "pending",
+      "designation": "Associate",
+      "technology": "Angular/React",
+      "salary": "60000",
+      "userId": 1
+    },
+    {
+      "name": "Nitu",
+      "city": "Patna",
+      "state": "Bihar",
+      "background verification": "pending",
+      "designation": "Sr. Associate",
+      "technology": "Full Stack",
+      "salary": "90000",
+      "userId": 1
+    },
+    {
+      "name": "Aniket",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "background verification": "pending",
+      "designation": "Sr. Associate",
+      "technology": "Angular/React",
+      "salary": "90000",
+      "userId": 1
+    },
+    {
+      "name": "Nibha",
+      "city": "Bhopal",
+      "state": "Madhya Pradesh",
+      "background verification": "pending",
+      "designation": "Associate",
+      "technology": "Full Stack",
+      "salary": "60000",
+      "userId": 1
+    },
+    {
+      "name": "Ajay",
+      "city": "Lucknow",
+      "state": "Uttar Pradesh",
+      "designation": "Sr. Associate",
+      "background verification": "done",
+      "technology": "Full Stack",
+      "salary": "90000",
+      "userId": 2
+    },
+    {
+      "name": "nilesh pandey",
+      "city": "pune",
+      "state": "maharashtra",
+      "designation": "AM",
+      "background verification": "yes",
+      "technology": "Angular/React",
+      "salary": "5000",
+      "userId": 3
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row emp-form" [ngClass]="{'not-dialog':!data}">
+        <div class="d-flex">
+            <h2 class="mr-auto emp-heading">Employee Details</h2>
+            <button class="button-close ml-auto" *ngIf="data" [mat-dialog-close]="true">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+        <form [formGroup]="empForm" (ngSubmit) = "onSubmit()">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input id ="firstName" type="text" class="form-control" formControlName="firstName" name="firstName" placeholder="Enter First Name">
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input id ="lastName" type="text" class="form-control" formControlName="lastName" name="lastName" placeholder="Enter Last Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id ="email" type="email" class="form-control" formControlName="email" name="email" placeholder="Enter Email Address">
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <input id ="mobile" type="text" class="form-control" formControlName="mobile" name="mobile" placeholder="Enter Mobile Number">
+            </div>
+            <div class="form-group">
+                <label for="salary">Salary</label>
+                <input id ="salary" type="text" class="form-control" formControlName="salary" name="salary" placeholder="Enter Salary">
+            </div>
+            <span class="right-align">
+                <button type="button"  mat-button
+                    [mat-dialog-close]="true">Close</button>
+                <button type="button" 
+                    (click)="resetEmpForm()">Reset</button>
+                <button type="submit">{{submitName}}</button>
+            </span>
+        </form>
+    </div>
+</div>
