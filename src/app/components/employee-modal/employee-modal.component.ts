@@ -16,13 +16,13 @@ export class EmployeeModalComponent implements OnInit {
 
   empForm: FormGroup;
   submitName = 'Add';
+  msgString : string = '';
   private sub = new Subject();
 
   private editData! : EmpInterface;
   @Input()
   data!: EmpInterface;
   @Output() apiSuccess = new EventEmitter<any>();
-  dashCall = false;
 
   constructor(private fb: FormBuilder, private apiSrv: ApiService, private router:Router, @Inject(MAT_DIALOG_DATA) public empDetails: any) {
     this.empForm = this.fb.group({
@@ -69,9 +69,10 @@ export class EmployeeModalComponent implements OnInit {
         next: resp=>{
           this.router.navigate(['/app-employee']);
           this.apiSuccess.emit(true);
+          this.msgString = 'Success';
         },
         error: error =>{
-          console.log("Error.........");
+          this.msgString = 'Error';
         }
       })
     } else if(this.submitName === "Update"){
@@ -79,9 +80,10 @@ export class EmployeeModalComponent implements OnInit {
          next: resp=>{
            this.router.navigate(['/app-employee']);
            this.apiSuccess.emit(true);
+           this.msgString = 'Success';
          },
          error: error =>{
-           console.log("Error.........");
+          this.msgString = 'Error';
          }
       })
     }

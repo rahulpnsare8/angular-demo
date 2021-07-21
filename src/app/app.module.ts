@@ -18,6 +18,7 @@ import { EmployeeModalComponent } from './components/employee-modal/employee-mod
 import { MatDialogModule } from '@angular/material/dialog'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConfirmDeleteComponent } from './components/confirm-delete/confirm-delete.component';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { ConfirmDeleteComponent } from './components/confirm-delete/confirm-dele
     HttpClientModule,
     MatDialogModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    OverlayModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -89,14 +89,6 @@
       "id": 105
     },
     {
-      "firstName": "Hardik",
-      "lastName": "Pandya",
-      "email": "hardik.pandya@qwe.com",
-      "mobile": "9756342354",
-      "salary": "78000",
-      "id": 106
-    },
-    {
       "firstName": "Ishan",
       "lastName": "Kishan",
       "email": "ishan.kishan@mail.com",
@@ -111,6 +103,30 @@
       "mobile": "6554325456",
       "salary": "65000",
       "id": 108
+    },
+    {
+      "firstName": "Satish",
+      "lastName": "Borkar",
+      "email": "satish.borkar@gmail.com",
+      "mobile": "9876543223",
+      "salary": "40000",
+      "id": 109
+    },
+    {
+      "firstName": "Nilesh",
+      "lastName": "Pandey",
+      "email": "Nilesh.Pandey",
+      "mobile": "7865342334",
+      "salary": "50000",
+      "id": 110
+    },
+    {
+      "firstName": "Virat",
+      "lastName": "Kohali",
+      "email": "Nilesh.Pandey",
+      "mobile": "7865342334",
+      "salary": "50000",
+      "id": 111
     }
   ],
   "dashboard": [

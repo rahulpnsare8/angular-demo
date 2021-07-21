@@ -22,4 +22,14 @@ describe('ConfirmDeleteComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should delete the employee when user confirms', ()=>{
+    let proceedDeleteResp = false;
+    component.apiSuccess.subscribe(res=> proceedDeleteResp = res)
+
+    component.proceedDelete();
+
+    expect(proceedDeleteResp).toBe(true);
+
+  })
 });
