@@ -22,6 +22,8 @@ export class EmployeeModalComponent implements OnInit {
   private editData! : EmpInterface;
   @Input()
   data!: EmpInterface;
+  @Input()
+  rout!: string;
   @Output() apiSuccess = new EventEmitter<any>();
 
   constructor(private fb: FormBuilder, private apiSrv: ApiService, private router:Router, @Inject(MAT_DIALOG_DATA) public empDetails: any) {
@@ -67,7 +69,11 @@ export class EmployeeModalComponent implements OnInit {
     if( this.submitName === "Add"){
       this.apiSrv.postData(this.empForm.value).pipe(takeUntil(this.sub)).subscribe({
         next: resp=>{
-          this.router.navigate(['/app-employee']);
+          if(this.rout === 'Employee'){
+            this.router.navigate(['/app-employee']);
+          } else {
+            this.router.navigate(['/app-home']);
+          }
           this.apiSuccess.emit(true);
           this.msgString = 'Success';
         },
@@ -78,7 +84,11 @@ export class EmployeeModalComponent implements OnInit {
     } else if(this.submitName === "Update"){
       this.apiSrv.updateData(this.empForm.value, this.editData.id).pipe(takeUntil(this.sub)).subscribe({
          next: resp=>{
-           this.router.navigate(['/app-employee']);
+          if(this.rout === 'Employee'){
+            this.router.navigate(['/app-employee']);
+          } else {
+            this.router.navigate(['/app-home']);
+          }
            this.apiSuccess.emit(true);
            this.msgString = 'Success';
          },

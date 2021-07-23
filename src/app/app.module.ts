@@ -19,6 +19,10 @@ import { MatDialogModule } from '@angular/material/dialog'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConfirmDeleteComponent } from './components/confirm-delete/confirm-delete.component';
 import { OverlayModule } from '@angular/cdk/overlay';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import { EmployeeCardComponent } from './components/employee-card/employee-card.component';
+import { FilterPipe } from './pipes/filter.pipe';
+
 
 
 @NgModule({
@@ -30,7 +34,9 @@ import { OverlayModule } from '@angular/cdk/overlay';
     EmployeeComponent,
     CustomerComponent,
     EmployeeModalComponent,
-    ConfirmDeleteComponent
+    ConfirmDeleteComponent,
+    EmployeeCardComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -44,7 +50,8 @@ import { OverlayModule } from '@angular/cdk/overlay';
     MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
-    OverlayModule
+    OverlayModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

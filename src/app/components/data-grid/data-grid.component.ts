@@ -68,7 +68,7 @@ export class DataGridComponent implements  OnDestroy {
           const result = {...val, action};
           return result;
         });
-
+        (response as EmpInterface[]).sort((prev, next) =>{return next.id -prev.id})
         this.dataSource = new MatTableDataSource(response as EmpInterface[]);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
@@ -77,6 +77,7 @@ export class DataGridComponent implements  OnDestroy {
 
   openDialog(empDetails? : EmpInterface){
     let dialogRef = empDetails ? this.dailog.open(EmployeeModalComponent,{data:{empDetails}, width:'40%', height:'80vh'}) : this.dailog.open(EmployeeModalComponent,{data:{}, width:'40%', height:'80vh'});
+    dialogRef.componentInstance.rout = 'Employee';
     dialogRef.componentInstance.apiSuccess.pipe(takeUntil(this.sub)).subscribe((res)=>{
       if(res){
         dialogRef.close();

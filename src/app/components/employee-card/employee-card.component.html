@@ -1,0 +1,11 @@
+<div class="card">
+    <h3>{{data.firstName}}  {{data.lastName}}</h3>
+    <p>{{data.mobile}}</p>
+    <p>{{data.email}}</p>
+    <p>
+        <button type="button" mat-flat-button color="warn" class="button"
+        (click)="confirmDelete(data.id)">Delete</button>
+        <button type="button" mat-flat-button color="accent" class="button"
+        (click)="edit(data)">Edit</button>
+    </p>
+</div>

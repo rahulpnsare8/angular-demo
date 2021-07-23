@@ -10,7 +10,7 @@
 
 button{
   width: 100px;
-  background-color: #93a0e7;
+  background-color: #6a7deb;
   color: white;
   padding: 8px 10px;
   margin: 6px 0px 0px 5px;
@@ -20,7 +20,7 @@ button{
 }
 
 button:hover {
-  background-color: #566ce7;
+  background-color: #435ce7;
 }
 
 .right-align{
