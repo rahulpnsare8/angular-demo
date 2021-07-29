@@ -22,6 +22,8 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { EmployeeCardComponent } from './components/employee-card/employee-card.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { BaseModalComponent } from './components/base-modal/base-modal.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -36,7 +38,9 @@ import { FilterPipe } from './pipes/filter.pipe';
     EmployeeModalComponent,
     ConfirmDeleteComponent,
     EmployeeCardComponent,
-    FilterPipe
+    FilterPipe,
+    BaseModalComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

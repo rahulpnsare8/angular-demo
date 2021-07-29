@@ -4,9 +4,9 @@
         <input type="text"  [(ngModel)] ="searchText"/>
         <button class="button button-success" (click)="add()">Add</button>
       </div>
-    <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="1.5%"  fxLayoutAlign="center" >
-        <ng-container *ngFor="let data of employeeDetails| filter:searchText">
-            <app-employee-card (successEvent) ="handleEvent($event)" fxFlex="0 0 31%" [data]='data'></app-employee-card>
-        </ng-container>
+    <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="1.5%"  fxLayoutAlign="left" >
+        <!-- <ng-container *ngFor="let data of employeeDetails| filter:searchText"> -->
+            <app-employee-card (successEvent) ="handleEvent($event)" fxFlex="0 0 15%" *ngFor="let data of employeeDetails| filter:searchText" [data]='data'></app-employee-card>
+        <!-- </ng-container> -->
     </div>
 </div>

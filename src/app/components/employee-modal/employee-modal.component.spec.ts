@@ -6,7 +6,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { of, throwError } from 'rxjs';
 
 describe('EmployeeModalComponent', () => {
@@ -34,9 +34,7 @@ describe('EmployeeModalComponent', () => {
       declarations: [ EmployeeModalComponent ],
       providers: [
         { provide: FormBuilder, useFactory: formBuilderStub },
-        { provide: ApiService, useFactory: apiServiceStub },
-        { provide: MAT_DIALOG_DATA, useValue: {} },
-        { provide: MatDialogRef, useValue: {} }
+        { provide: ApiService, useFactory: apiServiceStub }
       ]
     })
     .compileComponents();
@@ -67,14 +65,15 @@ describe('EmployeeModalComponent', () => {
     expect(component.empForm).toBeNaN();
   })
 
-  it('should set edit data on init',() => {
-    component.empDetails ={
-      empDetails : {
-        firstName: 'Rahul',
-        lastName: 'Pansare',
-        email: 'rahul.pansare@abc.com',
-        mobile: 9875643233,
-        salary: 20000
+  it('should set edit data on init', () =>{
+    component.data = {
+      empDetails  : {
+        id: 1,
+        firstName: 'Rohit',
+        lastName: 'Sharma',
+        email: 'rohit.sharma@mail.com',
+        mobile: 9867543223,
+        salary: 45000
       }
     };
 
@@ -97,8 +96,9 @@ describe('EmployeeModalComponent', () => {
   })
 
   it('should add entries in all input fields for edit', () => {
-    component.empDetails ={
+    component.data ={
       empDetails : {
+        id:1,
         firstName: 'Rahul',
         lastName: 'Pansare',
         email: 'rahul.pansare@abc.com',
@@ -107,7 +107,7 @@ describe('EmployeeModalComponent', () => {
       }
     };
 
-    component.makeEditEntry(component.empDetails.empDetails);
+    component.makeEditEntry(component.data.empDetails);
 
     expect(component.empForm.value.firstName).toEqual('Rahul');
   })
@@ -117,6 +117,7 @@ describe('EmployeeModalComponent', () => {
 
     spyOn((component as any).router,'navigate');
     component.submitName = 'Add';
+    component.rout='Employee';
 
     spyOn(apiServiceStub,'postData').and.returnValue(of({}));
     
@@ -131,6 +132,7 @@ describe('EmployeeModalComponent', () => {
 
     spyOn((component as any).router,'navigate');
     component.submitName = 'Add';
+    component.rout='Home';
 
     spyOn(apiServiceStub,'postData').and.returnValue(throwError('error'));
     
@@ -146,6 +148,7 @@ describe('EmployeeModalComponent', () => {
     spyOn((component as any).router,'navigate');
     (component as any).editData = {id:1};
     component.submitName = 'Update';
+    component.rout='Employee';
 
     spyOn(apiServiceStub,'updateData').and.returnValue(of({}));
     
@@ -161,6 +164,7 @@ describe('EmployeeModalComponent', () => {
     spyOn((component as any).router,'navigate');
     (component as any).editData = {id:1};
     component.submitName = 'Update';
+    component.rout='Home';
 
     spyOn(apiServiceStub,'updateData').and.returnValue(throwError('error'));
     

@@ -4,8 +4,7 @@ import { takeUntil } from 'rxjs/operators';
 import { ApiService } from 'src/app/services/api.service';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
-import { EmpInterface } from 'src/app/interfaces/app.model';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DailogInterface, EmpInterface } from 'src/app/interfaces/app.model';
 
 @Component({
   selector: 'app-employee-modal',
@@ -21,12 +20,12 @@ export class EmployeeModalComponent implements OnInit {
 
   private editData! : EmpInterface;
   @Input()
-  data!: EmpInterface;
+  data!: DailogInterface;
   @Input()
   rout!: string;
   @Output() apiSuccess = new EventEmitter<any>();
 
-  constructor(private fb: FormBuilder, private apiSrv: ApiService, private router:Router, @Inject(MAT_DIALOG_DATA) public empDetails: any) {
+  constructor(private fb: FormBuilder, private apiSrv: ApiService, private router:Router) {
     this.empForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -37,8 +36,8 @@ export class EmployeeModalComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.editData = this.empDetails.empDetails;
-    if(this.editData){
+    if(this.data !== undefined && JSON.stringify(this.data) !== '{}' && JSON.stringify(this.data.empDetails) !== '{}'){
+      this.editData = this.data && this.data.empDetails;
       this.makeEditEntry(this.editData);
     }
   }

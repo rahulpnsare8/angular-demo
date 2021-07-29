@@ -16,3 +16,7 @@ export interface ActionInterface {
     edit?:string;
     delete?:string
 }
+
+export interface DailogInterface {
+    empDetails : EmpInterface;
+}

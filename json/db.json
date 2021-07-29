@@ -1,14 +1,6 @@
 {
   "employee": [
     {
-      "firstName": "Naina",
-      "lastName": "Wadhwa",
-      "email": "naina@test.com",
-      "mobile": "9812091780",
-      "salary": "60000",
-      "id": 16
-    },
-    {
       "firstName": "Rama",
       "lastName": "Chandra",
       "email": "ram.chandra@gmail.com",
@@ -143,6 +135,38 @@
       "mobile": "6745232134",
       "salary": "65000",
       "id": 113
+    },
+    {
+      "firstName": "Samir",
+      "lastName": "Gadhave",
+      "email": "samir.gadhave@abc.com",
+      "mobile": "987642354",
+      "salary": "34090",
+      "id": 114
+    },
+    {
+      "firstName": "Rahul",
+      "lastName": "Pansare",
+      "email": "rahul.pansare@xyz.com",
+      "mobile": "9867542345",
+      "salary": "565469789",
+      "id": 115
+    },
+    {
+      "firstName": "Mahesh",
+      "lastName": "Surve1",
+      "email": "mahesh.surve@pqr.com",
+      "mobile": "7867544332",
+      "salary": "65000",
+      "id": 116
+    },
+    {
+      "firstName": "Ganesh",
+      "lastName": "Bhat",
+      "email": "ganesh.bhat@abc.com",
+      "mobile": "9067543456",
+      "salary": "50000",
+      "id": 117
     }
   ],
   "dashboard": [

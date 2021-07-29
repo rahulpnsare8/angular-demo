@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { EmpInterface } from 'src/app/interfaces/app.model';
 import { MatDialog} from '@angular/material/dialog'
 import { EmployeeModalComponent } from '../employee-modal/employee-modal.component';
-import { ConfirmDeleteComponent } from '../confirm-delete/confirm-delete.component';
+import { BaseModalComponent } from '../base-modal/base-modal.component';
 
 
 @Component({
@@ -13,30 +13,38 @@ import { ConfirmDeleteComponent } from '../confirm-delete/confirm-delete.compone
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnDestroy {
 
   private sub = new Subject();
-
   employeeDetails: EmpInterface[]  =<any>[];
-
-  constructor(private appService : ApiService,private dailog : MatDialog) { }
-
   searchText : string = '';
-
   private deletDailogDef: any;
 
-  ngOnInit(): void {
-     this.getEmpData();
+  public data :EmpInterface ={ id: 16,
+    firstName: 'Rohit',
+    lastName: 'Sharma',
+    email: 'rohit.sharma@mail.com',
+    mobile: 9867543223,
+    salary: 45000};
+
+  constructor(private appService : ApiService,private dailog : MatDialog) { 
+    this.getEmpData();
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 
   getEmpData(){
     this.appService.getEmpData().pipe(takeUntil(this.sub)).subscribe( resp =>{
-         this.employeeDetails = (resp as EmpInterface[]).sort((prev, next) =>{return next.id -prev.id});
+         this.employeeDetails = (resp as EmpInterface[]).sort((prev, next) =>{return next.id - prev.id});
     })
   }
 
   openDialog(empDetails? : EmpInterface){
-    let dialogRef = empDetails ? this.dailog.open(EmployeeModalComponent,{data:{empDetails}, width:'40%', height:'80vh'}) : this.dailog.open(EmployeeModalComponent,{data:{}, width:'40%', height:'80vh'});
+    let dialogRef = empDetails ? this.dailog.open(BaseModalComponent,{data:{empDetails}, width:'40%', height:'80vh'}) : this.dailog.open(BaseModalComponent,{data:{}, width:'40%', height:'80vh'});
+    dialogRef.componentInstance.rout = 'Home';
+    dialogRef.componentInstance.component = EmployeeModalComponent;
     dialogRef.componentInstance.apiSuccess.pipe(takeUntil(this.sub)).subscribe((res)=>{
       if(res){
         dialogRef.close();

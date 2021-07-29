@@ -31,7 +31,7 @@ describe('DataGridComponent', () => {
       })
     })
     const matDialogStub = () => ({
-      open : (EmployeeModalComponent: any, object: any) =>({})
+      open : (BaseModalComponent: any, object: any) =>({})
     })
     await TestBed.configureTestingModule({
       declarations: [ DataGridComponent ],
@@ -46,6 +46,7 @@ describe('DataGridComponent', () => {
     })
     .compileComponents();
     spyOn(DataGridComponent.prototype,'getEmpData');
+   
   });
 
   beforeEach(() => {
@@ -66,20 +67,7 @@ describe('DataGridComponent', () => {
   it('should make init call', () => {
     expect(DataGridComponent.prototype.getEmpData).toHaveBeenCalled();
   })
-
-  // it('should change case before applying the filter',() => {
-  //   let event = {
-  //     target :{
-  //       value:'rahul'
-  //     }
-  //   }
-  //   spyOnProperty(component,'dataSource').and.returnValue(new MatTableDataSource());
-       
-  //   component.filterData(event);
-
-  //   expect(component.dataSource.filteredData.length).toEqual(1);
-  // })
-
+ 
   it('should get all emp data on load',()=>{
     const apiServiceStub : ApiService = fixture.debugElement.injector.get(ApiService);
     const result = [{ id: 1,

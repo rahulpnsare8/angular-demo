@@ -1,4 +1,4 @@
-import { ElementRef, OnDestroy, Renderer2,Component, OnInit, ViewChild} from '@angular/core';
+import { ElementRef, OnDestroy, Renderer2,Component, OnInit, ViewChild, } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -9,15 +9,7 @@ import { EmpInterface } from 'src/app/interfaces/app.model';
 import { MatDialog} from '@angular/material/dialog'
 import { EmployeeModalComponent } from '../employee-modal/employee-modal.component';
 import { ConfirmDeleteComponent } from '../confirm-delete/confirm-delete.component';
-
-export interface UserDetails {
-  userId: number;
-  firstName: string;
-  lastName:string;
-  email: string;
-  mobile: number;
-  salary: number;
-}
+import { BaseModalComponent } from '../base-modal/base-modal.component';
 
 @Component({
   selector: 'app-data-grid',
@@ -76,8 +68,9 @@ export class DataGridComponent implements  OnDestroy {
   }
 
   openDialog(empDetails? : EmpInterface){
-    let dialogRef = empDetails ? this.dailog.open(EmployeeModalComponent,{data:{empDetails}, width:'40%', height:'80vh'}) : this.dailog.open(EmployeeModalComponent,{data:{}, width:'40%', height:'80vh'});
+    let dialogRef = empDetails ? this.dailog.open(BaseModalComponent,{data:{empDetails}, width:'40%', height:'80vh'}) : this.dailog.open(BaseModalComponent,{data:{}, width:'40%', height:'80vh'});
     dialogRef.componentInstance.rout = 'Employee';
+    dialogRef.componentInstance.component = EmployeeModalComponent;
     dialogRef.componentInstance.apiSuccess.pipe(takeUntil(this.sub)).subscribe((res)=>{
       if(res){
         dialogRef.close();

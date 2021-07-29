@@ -2,9 +2,9 @@
     <div class="row emp-form" [ngClass]="{'not-dialog':!data}">
         <div class="d-flex">
             <h2 class="mr-auto emp-heading">Employee Details</h2>
-            <button class="button-close ml-auto" *ngIf="data" [mat-dialog-close]="true">
+            <!-- <button class="button-close ml-auto" *ngIf="!data" [mat-dialog-close]="true">
                 <mat-icon>close</mat-icon>
-            </button>
+            </button> -->
         </div>
         <form [formGroup]="empForm" (ngSubmit) = "onSubmit()">
             <div class="form-group">
