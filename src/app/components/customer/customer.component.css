@@ -1,0 +1,25 @@
+.container{
+    padding:10px;
+}
+
+.example-full-width{
+    width: 100%;
+}
+
+.example-radio-group {
+    display: flex;
+   
+  }
+  
+  .example-radio-button {
+    margin: 5px;
+  }
+
+.button-style{
+    height: 40px;
+    margin: 10px 10px 0px 0px;
+}
+
+.checkbox-style{
+    margin: 0px 10px 0px 0px;
+}

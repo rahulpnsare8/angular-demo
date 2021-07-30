@@ -1,1 +1,219 @@
-<p>customer works!</p>
+<!-- <form [formGroup]="custForm" (ngSubmit) = "onSubmit()"> -->
+<div class="container">
+<div fxLayout="row" >
+    <div fxFlex="50%" fxFlexOrder.xs="1">
+        <div fxLayout="row" fxLayout.xs="column" fxFlex fxLayoutGap="15px">
+            <div fxFlex="50%">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>First name</mat-label>
+                    <input  matInput [formControl]="firstNameControl"  [errorStateMatcher]="matcher">
+                    <mat-error *ngIf="firstNameControl.hasError('required')">
+                      First Name is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+            </div>
+            <div fxFlex="50%">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput [formControl]="lastNameControl"  [errorStateMatcher]="matcher">
+                    <mat-error *ngIf="lastNameControl.hasError('required')">
+                      Last Name is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+            </div>
+        </div>
+      
+    </div>
+    <div fxFlex="50%" fxFlexOrder.xs="2"> 
+        <!-- right side section -->
+      </div>
+    
+
+</div>
+<div fxLAyout="row">
+    <div fxFlex="50%">
+          <div fxLayout="row" fxLayout.xs="column" fxFlex fxLayoutGap="15px">
+            <div fxFlex="50%">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                           placeholder="Ex. pat@example.com">
+                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                      Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                      Email is <strong>required</strong>
+                    </mat-error>
+                  </mat-form-field>
+            </div>
+            <div fxFlex="50%">
+                <label id="gender">Gender</label>
+                <mat-radio-group class="example-radio-group" aria-labelledby="gender" [formControl]="gender">
+                    <mat-radio-button class="example-radio-button" value="1">Male</mat-radio-button>
+                    <mat-radio-button class="example-radio-button" value="2">Female</mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div fxLAyout="row">
+    <div fxFlex="50%">
+          <div fxLayout="row" fxLayout.xs="column" fxFlex fxLayoutGap="15px">
+            <div fxFlex="50%">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Address</mat-label>
+                    <textarea matInput [formControl]="address" placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+                  </mat-form-field>
+            </div>
+            <div fxFlex="50%">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Address 2</mat-label>
+                    <textarea [formControl]="address2" matInput></textarea>
+                  </mat-form-field>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div fxLAyout="row">
+    <div fxFlex="50%">
+          <div fxLayout="row" fxLayout.xs="column" fxFlex fxLayoutGap="15px">
+            <div fxFlex="50%">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>City</mat-label>
+                    <input matInput [formControl]="city" placeholder="Ex. San Francisco">
+                  </mat-form-field>
+            </div>
+            <div fxFlex="50%">
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>State</mat-label>
+                    <mat-select [disabled]="disableSelect.value" [formControl]="state" >
+                      <mat-option [value]="state" *ngFor="let state of states" >{{state}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div fxLAyout="row">
+    <div fxFlex="50%">
+          <div fxLayout="row" fxLayout.xs="column" fxFlex fxLayoutGap="15px">
+            <div fxFlex="50%">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Postal Code</mat-label>
+                    <input matInput [formControl]="postalCode" maxlength="6" placeholder="Ex. 94105" value="">
+                  </mat-form-field>
+            </div>
+            <div fxFlex="50%">
+                <section class="example-section" [formGroup]="toppings">
+                    <h5>Select your language</h5>
+                   <span  *ngFor="let lang of languages" >
+                          <mat-checkbox class="checkbox-style" [formControlName]="lang" (ngModelChange)="updateAllComplete()">
+                            {{lang}}
+                          </mat-checkbox>
+                        </span>
+                  </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div fxLAyout="row">
+    <div fxFlex="50%" fxFlexOrder.xs="1">
+        <div fxLayout="row" fxLayout.xs="column" fxFlex fxLayoutGap="15px">
+            <div fxFlex="50%">
+                <mat-form-field color="accent" appearance="fill">
+                    <mat-label>Select Birthdate</mat-label>
+                    <input matInput [formControl]="date" [matDatepicker]="picker1">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                  </mat-form-field>
+                  
+            </div>
+            <div fxFlex="50%" fxLayoutAlign="right">
+                <button class= "button-style" type="submit" mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+                <button class= "button-style" type="submit" mat-raised-button color="primary" (click)="setCustomerInpputs()">Set Values</button>
+                <button class= "button-style" type="submit" mat-raised-button color="primary" (click)="reset()">Reset</button>
+            </div>
+        </div>
+    </div>
+    <div fxFlex="50%" fxFlexOrder.xs="2">
+          
+    </div>
+</div>
+
+</div>
+
+  <!-- <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>First name</mat-label>
+      <input  matInput [formControl]="firstNameControl"  [errorStateMatcher]="matcher">
+      <mat-error *ngIf="firstNameControl.hasError('required')">
+        First Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input matInput [formControl]="lastNameControl"  [errorStateMatcher]="matcher">
+      <mat-error *ngIf="lastNameControl.hasError('required')">
+        Last Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field></td>
+  </tr></table>
+  <p>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+               placeholder="Ex. pat@example.com">
+        <mat-hint>Errors appear instantly!</mat-hint>
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-radio-group aria-label="Select an Gender" [formControl]="gender">
+        <mat-radio-button value="1">Male</mat-radio-button>
+        <mat-radio-button value="2">Female</mat-radio-button>
+      </mat-radio-group>
+  </p>
+
+  <p>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Address</mat-label>
+      <textarea matInput [formControl]="address" placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Address 2</mat-label>
+      <textarea [formControl]="address2" matInput></textarea>
+    </mat-form-field>
+  </p>
+
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>City</mat-label>
+      <input matInput [formControl]="city" placeholder="Ex. San Francisco">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>State</mat-label>
+      <input matInput [formControl]="state" placeholder="Ex. California">
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Postal Code</mat-label>
+      <input matInput [formControl]="postalCode" maxlength="5" placeholder="Ex. 94105" value="">
+    </mat-form-field></td>
+  </tr></table>
+    <section class="example-section" [formGroup]="toppings">
+        <h4>Select your language:</h4>
+       <span  *ngFor="let lang of languages" >
+              <mat-checkbox [formControlName]="lang" (ngModelChange)="updateAllComplete()">
+                {{lang}}
+              </mat-checkbox>
+            </span>
+      </section>
+    <p>
+        <button type="submit" mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+    </p> -->

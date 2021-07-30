@@ -36,3 +36,7 @@ table {
 .button-danger:hover {
   background-color: #f73333;
 }
+
+.button-style{
+  height: 40px;
+}

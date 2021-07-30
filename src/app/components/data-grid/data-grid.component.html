@@ -39,9 +39,9 @@
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
         <td mat-cell *matCellDef="let element"> 
           <div class="d-flex">
-            <button type="button" mat-flat-button color="accent" class="button button-success"
+            <button type="button" class="button-style" mat-flat-button color="accent" class="button button-success"
                 (click)="edit(element)">{{element.action.edit}}</button>
-            <button type="button" mat-flat-button color="warn" class="button button-danger"
+            <button type="button" class="button-style" mat-flat-button color="warn" class="button button-danger"
                 (click)="confirmDelete(element.id)">{{element.action.delete}}</button>
         </div></td>
       </ng-container>

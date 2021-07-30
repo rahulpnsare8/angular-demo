@@ -44,12 +44,7 @@ describe('EmployeeCardComponent', () => {
   });
 
   it('Should open emp form dialog', ()=>{
-    component.data ={ id: 16,
-      firstName: 'Rohit',
-      lastName: 'Sharma',
-      email: 'rohit.sharma@mail.com',
-      mobile: 9867543223,
-      salary: 45000};
+    
     const empInterfaceStub : EmpInterface = <any>{};
     const resp = {
       componentInstance : {
